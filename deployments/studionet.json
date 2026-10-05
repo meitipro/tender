@@ -1,0 +1,259 @@
+{
+  "network": "studionet",
+  "chain_id": 61999,
+  "contract": "0xFb0ead90ab52f18bDEd07CB2f2922bA7eEE58Cc0",
+  "explorer": "https://explorer-studio.genlayer.com/address/0xFb0ead90ab52f18bDEd07CB2f2922bA7eEE58Cc0",
+  "source_sha256": "d97776786fb0a9001abbae7caa0b5ab94def84541c3dfccdc888a94ecde92e9a",
+  "constructor": {},
+  "accounts": {
+    "buyer": "0xBC3fF1Ef827CeeE1189FA21569F4d5B399D1e362",
+    "ann": "0xD75E0Bf252aa8Cd3D6C021b9d9cFa91aaf60f9da",
+    "ben": "0x0DcD016647e3f3591089F67910634Ed15e62aDa9",
+    "cal": "0x8c1FDD972FAd72B8db90CD50fdD10FdB04c3B9Fa",
+    "dev": "0x9BE153941a04Cb3E111F027954EfF58C81E75322",
+    "stranger": "0xB3286f5CEB5106eb8e69Ae97471BE2347325Af7c"
+  },
+  "steps": [
+    {
+      "step": "deploy",
+      "method": "deploy",
+      "from": "0xBC3fF1Ef827CeeE1189FA21569F4d5B399D1e362",
+      "tx": "0xd26458cfaf19378f256a40a4e51f3f62b2f025d08eedf2da9f1f0dd613b3b5ce",
+      "status": "FINALIZED",
+      "ok": true,
+      "refusal": "",
+      "address": "0xFb0ead90ab52f18bDEd07CB2f2922bA7eEE58Cc0"
+    },
+    {
+      "step": "tender 0 opened: three requirements",
+      "method": "open",
+      "from": "0xBC3fF1Ef827CeeE1189FA21569F4d5B399D1e362",
+      "tx": "0xf39a983ba800ac26d9db7a549f3c8414335a336464ae61ff651c2885488adcf0",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "the buyer bids on its own tender",
+      "method": "bid",
+      "from": "0xBC3fF1Ef827CeeE1189FA21569F4d5B399D1e362",
+      "tx": "0x255befeeb22cdf612d3430192a843dcb7280f64174f03db9309a74f1ceb87e70",
+      "status": "ACCEPTED",
+      "ok": false,
+      "refusal": "[EXPECTED] the buyer cannot bid on its own tender"
+    },
+    {
+      "step": "bid 0: Ann, 1180",
+      "method": "bid",
+      "from": "0xD75E0Bf252aa8Cd3D6C021b9d9cFa91aaf60f9da",
+      "tx": "0x319c9e60008d6c1536fb1ae77f764d8ac1b3146b1e2aab688c61d5e172ea0a77",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "bid 1: Ben, 950, glossy virgin paper",
+      "method": "bid",
+      "from": "0x0DcD016647e3f3591089F67910634Ed15e62aDa9",
+      "tx": "0xe4462e75d64d2b1b5b89f4c9374cd8e618e077cbe5b5c1429373a4a74889ec6f",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "bid 2: Cal, 1240",
+      "method": "bid",
+      "from": "0x8c1FDD972FAd72B8db90CD50fdD10FdB04c3B9Fa",
+      "tx": "0x5fd7a6e8d2cbf3a6bbe3f26311fce9223ee5803797f5944e1e10462e3bcefc42",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "bid 3: Dev, 1090, delivery on 20 November",
+      "method": "bid",
+      "from": "0x9BE153941a04Cb3E111F027954EfF58C81E75322",
+      "tx": "0xb4452bdb1d4081ef8e1970c8577cbed81a679b2758c967e6beb28575198c8858",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "Ann bids a second time",
+      "method": "bid",
+      "from": "0xD75E0Bf252aa8Cd3D6C021b9d9cFa91aaf60f9da",
+      "tx": "0x006b588e0b6780d419bbb71e153357e3d278eaa3f7a8a98fa0c85a79e722eb65",
+      "status": "ACCEPTED",
+      "ok": false,
+      "refusal": "[EXPECTED] a supplier bids once per tender"
+    },
+    {
+      "step": "an assessment before bids close",
+      "method": "assess",
+      "from": "0xD75E0Bf252aa8Cd3D6C021b9d9cFa91aaf60f9da",
+      "tx": "0xd18ba0d1244f94ce71b33ebf614054729af2cb8278b92236497186ade910cd31",
+      "status": "ACCEPTED",
+      "ok": false,
+      "refusal": "[EXPECTED] assessments open when bids close at 2026-10-05T23:39:27Z"
+    },
+    {
+      "step": "a bid after bids closed",
+      "method": "bid",
+      "from": "0xB3286f5CEB5106eb8e69Ae97471BE2347325Af7c",
+      "tx": "0x382e946ff6f19a7cdaf3603244551136d0047d254dba113251aae6e14a6143c3",
+      "status": "ACCEPTED",
+      "ok": false,
+      "refusal": "[EXPECTED] bids closed at 2026-10-05T23:39:27Z"
+    },
+    {
+      "step": "a stranger asks for an assessment",
+      "method": "assess",
+      "from": "0xB3286f5CEB5106eb8e69Ae97471BE2347325Af7c",
+      "tx": "0xaf47ef2d09c4ee9384e1bd2c0eab6f9ab2ea0fb7a143fe6b893f792fc7e6dbc4",
+      "status": "ACCEPTED",
+      "ok": false,
+      "refusal": "[EXPECTED] only the buyer or a bidder on this tender may ask for an assessment"
+    },
+    {
+      "step": "bid 1 assessed: both orders",
+      "method": "assess",
+      "from": "0xBC3fF1Ef827CeeE1189FA21569F4d5B399D1e362",
+      "tx": "0x1ccdeef4247d112c29dd1bc6a21e5decb051f71337a11df6c57740543951de19",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "bid 0 assessed: both orders",
+      "method": "assess",
+      "from": "0xD75E0Bf252aa8Cd3D6C021b9d9cFa91aaf60f9da",
+      "tx": "0x99608abf37446b2f333bc482f0ca1bd10556206b2925e08589673ebb39b03f8f",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "bid 2 assessed: both orders",
+      "method": "assess",
+      "from": "0x8c1FDD972FAd72B8db90CD50fdD10FdB04c3B9Fa",
+      "tx": "0xb8151efcc3f835ab9ddb00b0ce2f10b25719e76a8b086ca27b7571bda94fdaf7",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "an award while bid 3 waits",
+      "method": "award",
+      "from": "0xB3286f5CEB5106eb8e69Ae97471BE2347325Af7c",
+      "tx": "0x5666fe33a0083e015ad2ec1f63dc3695f38c0b471d03034f2dd33247e1cffdc0",
+      "status": "ACCEPTED",
+      "ok": false,
+      "refusal": "[EXPECTED] bid 3 is waiting for its assessment until 2026-10-05T23:49:27Z"
+    },
+    {
+      "step": "bid 3 assessed after assessments closed",
+      "method": "assess",
+      "from": "0x9BE153941a04Cb3E111F027954EfF58C81E75322",
+      "tx": "0xd7ab2e39ae3ca84982285c6c71479ad03a354d0dcdc7941c95ee4109b0906845",
+      "status": "ACCEPTED",
+      "ok": false,
+      "refusal": "[EXPECTED] assessments closed at 2026-10-05T23:49:27Z; a bid nobody assessed is not compliant at the award"
+    },
+    {
+      "step": "tender 0 awarded",
+      "method": "award",
+      "from": "0xB3286f5CEB5106eb8e69Ae97471BE2347325Af7c",
+      "tx": "0x78ec11d7ca0d0ef180b71611045dad1b982cd5e2c6be52f98afed1061394edbd",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    }
+  ],
+  "tenders": [
+    {
+      "tender": {
+        "assess_close": "2026-10-05T23:49:27Z",
+        "assessed": 3,
+        "awarded_at": "2026-10-05T23:50:18Z",
+        "bids": 4,
+        "bids_close": "2026-10-05T23:39:27Z",
+        "buyer": "0xBC3fF1Ef827CeeE1189FA21569F4d5B399D1e362",
+        "opened_at": "2026-10-05T23:31:27Z",
+        "requirements": 3,
+        "status": "awarded",
+        "title": "400 programmes for the GenLayer builders' day, Leeds (prices in euros)",
+        "winner": "0xD75E0Bf252aa8Cd3D6C021b9d9cFa91aaf60f9da",
+        "winning_bid": 0,
+        "winning_price": "1180"
+      },
+      "requirements": [
+        {
+          "index": 0,
+          "tender": 0,
+          "text": "Printed on paper with at least 70 percent recycled content"
+        },
+        {
+          "index": 1,
+          "tender": 0,
+          "text": "All 400 programmes delivered to the venue by 14 November 2026"
+        },
+        {
+          "index": 2,
+          "tender": 0,
+          "text": "A5 size, full colour on every page, saddle stitched"
+        }
+      ],
+      "bids": [
+        {
+          "assessed_by": "0xD75E0Bf252aa8Cd3D6C021b9d9cFa91aaf60f9da",
+          "at": "2026-10-05T23:32:06.102821Z",
+          "by": "0xD75E0Bf252aa8Cd3D6C021b9d9cFa91aaf60f9da",
+          "id": 0,
+          "price": "1180",
+          "proposal": "We will print all 400 programmes on 100 percent recycled silk paper, A5, full colour on every page and saddle stitched, and deliver them to the venue on 12 November 2026.",
+          "reason_is_leader_supplied": true,
+          "tender": 0,
+          "verdict": "meets",
+          "why": "Commits to 100% recycled paper, delivery by 12 November 2026, and A5 full-colour saddle-stitched programmes for all 400 copies."
+        },
+        {
+          "assessed_by": "0xBC3fF1Ef827CeeE1189FA21569F4d5B399D1e362",
+          "at": "2026-10-05T23:32:25.053935Z",
+          "by": "0x0DcD016647e3f3591089F67910634Ed15e62aDa9",
+          "id": 1,
+          "price": "950",
+          "proposal": "400 programmes in A5, full colour throughout, saddle stitched, printed on our standard glossy virgin-fibre paper and delivered to the venue on 10 November 2026.",
+          "reason_is_leader_supplied": true,
+          "tender": 0,
+          "verdict": "fails",
+          "why": "Proposal specifies virgin-fibre paper, failing R0 which requires at least 70% recycled content."
+        },
+        {
+          "assessed_by": "0x8c1FDD972FAd72B8db90CD50fdD10FdB04c3B9Fa",
+          "at": "2026-10-05T23:32:44.286772Z",
+          "by": "0x8c1FDD972FAd72B8db90CD50fdD10FdB04c3B9Fa",
+          "id": 2,
+          "price": "1240",
+          "proposal": "A5 programmes, full colour on every page, saddle stitched, printed on 80 percent recycled paper; all 400 delivered to the venue by 13 November 2026.",
+          "reason_is_leader_supplied": true,
+          "tender": 0,
+          "verdict": "meets",
+          "why": "The proposal meets all requirements: 80% recycled paper, delivery by Nov 13 (before Nov 14), and A5 full-colour saddle stitched."
+        },
+        {
+          "assessed_by": "",
+          "at": "2026-10-05T23:33:03.398902Z",
+          "by": "0x9BE153941a04Cb3E111F027954EfF58C81E75322",
+          "id": 3,
+          "price": "1090",
+          "proposal": "Recycled paper, A5, full colour, stitched. We can deliver all 400 to the venue on 20 November 2026, after our current print run.",
+          "reason_is_leader_supplied": true,
+          "tender": 0,
+          "verdict": "unassessed",
+          "why": ""
+        }
+      ],
+      "winner": "0xD75E0Bf252aa8Cd3D6C021b9d9cFa91aaf60f9da"
+    }
+  ]
+}
